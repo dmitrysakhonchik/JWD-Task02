@@ -15,7 +15,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
     @Override
     public Appliance find(Criteria criteria) throws IOException {
         String fileData = applianceReader.readFromFile("appliance-list.txt");
-        Appliance appliance = applianceFactory.getAppliance(criteria.getGroupSearchName());
+
 
 
         return null;
