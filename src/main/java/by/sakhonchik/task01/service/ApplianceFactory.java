@@ -1,14 +1,12 @@
 package by.sakhonchik.task01.service;
 
 import by.sakhonchik.task01.entity.*;
-import by.sakhonchik.task01.entity.criteria.Criteria;
 
 public class ApplianceFactory {
 
     public Appliance getAppliance(String criteria) {
-        String nameOfAppliance = criteria.getGroupSearchName();
 
-        switch (nameOfAppliance) {
+        switch (criteria) {
             case "Oven":
                 return new Oven();
             case "Laptop":
@@ -24,5 +22,6 @@ public class ApplianceFactory {
             default:
                 return null;
         }
+
     }
 }
