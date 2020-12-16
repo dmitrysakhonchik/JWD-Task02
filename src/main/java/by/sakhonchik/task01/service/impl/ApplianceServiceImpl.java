@@ -7,10 +7,12 @@ import by.sakhonchik.task01.entity.Appliance;
 import by.sakhonchik.task01.entity.criteria.Criteria;
 import by.sakhonchik.task01.service.ApplianceService;
 
+import java.io.IOException;
+
 public class ApplianceServiceImpl implements ApplianceService{
 
 	@Override
-	public Appliance find(Criteria criteria) {
+	public Appliance find(Criteria criteria) throws IOException {
 		if (!Validator.criteriaValidator(criteria)) {
 			return null;
 		}

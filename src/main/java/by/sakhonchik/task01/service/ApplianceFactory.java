@@ -5,7 +5,7 @@ import by.sakhonchik.task01.entity.criteria.Criteria;
 
 public class ApplianceFactory {
 
-    public Appliance getAppliance(Criteria criteria) {
+    public Appliance getAppliance(String criteria) {
         String nameOfAppliance = criteria.getGroupSearchName();
 
         switch (nameOfAppliance) {

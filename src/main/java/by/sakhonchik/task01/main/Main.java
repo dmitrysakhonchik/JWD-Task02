@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Appliance appliance;
 
@@ -43,7 +43,7 @@ public class Main {
         criteriaTabletPC.add(SearchCriteria.TabletPC.DISPLAY_INCHES.toString(), 14);
         criteriaTabletPC.add(SearchCriteria.TabletPC.MEMORY_ROM.toString(), 4);
 
-        appliance = service.find(criteriaOven);// find(Object...obj)
+        appliance = service.find(criteriaTabletPC);// find(Object...obj)
 
         PrintApplianceInfo.print(appliance);
 
