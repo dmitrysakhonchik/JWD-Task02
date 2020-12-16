@@ -1,0 +1,30 @@
+package by.sakhonchik.task01.service.impl;
+
+import by.sakhonchik.task01.dao.DAOFactory;
+import by.sakhonchik.task01.service.validation.Validator;
+import by.sakhonchik.task01.dao.ApplianceDAO;
+import by.sakhonchik.task01.entity.Appliance;
+import by.sakhonchik.task01.entity.criteria.Criteria;
+import by.sakhonchik.task01.service.ApplianceService;
+
+public class ApplianceServiceImpl implements ApplianceService{
+
+	@Override
+	public Appliance find(Criteria criteria) {
+		if (!Validator.criteriaValidator(criteria)) {
+			return null;
+		}
+		
+		DAOFactory factory = DAOFactory.getInstance();
+		ApplianceDAO applianceDAO = factory.getApplianceDAO();
+		
+		Appliance appliance = applianceDAO.find(criteria);
+		
+		// you may add your own code here
+		
+		return appliance;
+	}
+
+}
+
+//you may add your own new classes
