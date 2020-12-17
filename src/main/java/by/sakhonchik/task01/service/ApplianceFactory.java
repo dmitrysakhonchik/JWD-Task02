@@ -5,7 +5,7 @@ import by.sakhonchik.task01.entity.*;
 
 public class ApplianceFactory {
 
-    public Appliance getAppliance(String[] applianceParameters,String applianceName) {
+    public Appliance getBuildAppliance(String[] applianceParameters, String applianceName) {
 
         switch (applianceName) {
             case "Oven":
