@@ -30,16 +30,89 @@ public class ApplianceFileReader {
 
     private Appliance getAppliance(String info) {
         String[] param = info.split(" ");
+        String[] parameters;
         switch (param[0]) {
             case "Oven":
-                String[] parameters = getOvenParameters(param);
+                parameters = getOvenParameters(param);
                 return applianceFactory.getAppliance(parameters, param[0]);
+            case "Laptop":
+                parameters = getLaptopParameters(param);
+                return applianceFactory.getAppliance(parameters, param[0]);
+            case "Refrigerator":
+                parameters = getRefrigeratorParameters(param);
+                return applianceFactory.getAppliance(parameters, param[0]);
+            case "VacuumCleaner":
+                parameters = getVacuumCleanerParameters(param);
+                return applianceFactory.getAppliance(parameters, param[0]);
+            case "TabletPC":
+                parameters = getTabletPCParameters(param);
+                return applianceFactory.getAppliance(parameters, param[0]);
+            case "Speakers":
+                parameters = getSpeakersParameters(param);
+                return applianceFactory.getAppliance(parameters, param[0]);
+            default:
+                return null;
 
         }
 
     }
 
     private String[] getOvenParameters(String[] param) {
+        String[] parameters = new String[6];
+        parameters[0] = param[2].substring(param[2].indexOf("="), param[2].indexOf(","));
+        parameters[1] = param[3].substring(param[3].indexOf("="), param[3].indexOf(","));
+        parameters[2] = param[4].substring(param[4].indexOf("="), param[4].indexOf(","));
+        parameters[3] = param[5].substring(param[5].indexOf("="), param[5].indexOf(","));
+        parameters[4] = param[6].substring(param[6].indexOf("="), param[6].indexOf(","));
+        parameters[5] = param[7].substring(param[7].indexOf("="), param[7].indexOf(" "));
+        return parameters;
+    }
+
+    private String[] getLaptopParameters(String[] param) {
+        String[] parameters = new String[6];
+        parameters[0] = param[2].substring(param[2].indexOf("="), param[2].indexOf(","));
+        parameters[1] = param[3].substring(param[3].indexOf("="), param[3].indexOf(","));
+        parameters[2] = param[4].substring(param[4].indexOf("="), param[4].indexOf(","));
+        parameters[3] = param[5].substring(param[5].indexOf("="), param[5].indexOf(","));
+        parameters[4] = param[6].substring(param[6].indexOf("="), param[6].indexOf(","));
+        parameters[5] = param[7].substring(param[7].indexOf("="), param[7].indexOf(" "));
+        return parameters;
+    }
+
+    private String[] getRefrigeratorParameters(String[] param) {
+        String[] parameters = new String[6];
+        parameters[0] = param[2].substring(param[2].indexOf("="), param[2].indexOf(","));
+        parameters[1] = param[3].substring(param[3].indexOf("="), param[3].indexOf(","));
+        parameters[2] = param[4].substring(param[4].indexOf("="), param[4].indexOf(","));
+        parameters[3] = param[5].substring(param[5].indexOf("="), param[5].indexOf(","));
+        parameters[4] = param[6].substring(param[6].indexOf("="), param[6].indexOf(","));
+        parameters[5] = param[7].substring(param[7].indexOf("="), param[7].indexOf(" "));
+        return parameters;
+    }
+
+    private String[] getVacuumCleanerParameters(String[] param) {
+        String[] parameters = new String[6];
+        parameters[0] = param[2].substring(param[2].indexOf("="), param[2].indexOf(","));
+        parameters[1] = param[3].substring(param[3].indexOf("="), param[3].indexOf(","));
+        parameters[2] = param[4].substring(param[4].indexOf("="), param[4].indexOf(","));
+        parameters[3] = param[5].substring(param[5].indexOf("="), param[5].indexOf(","));
+        parameters[4] = param[6].substring(param[6].indexOf("="), param[6].indexOf(","));
+        parameters[5] = param[7].substring(param[7].indexOf("="), param[7].indexOf(" "));
+        return parameters;
+    }
+
+    private String[] getSpeakersParameters(String[] param) {
+        String[] parameters = new String[6];
+        parameters[0] = param[2].substring(param[2].indexOf("="), param[2].indexOf(","));
+        parameters[1] = param[3].substring(param[3].indexOf("="), param[3].indexOf(","));
+        parameters[2] = param[4].substring(param[4].indexOf("="), param[4].indexOf(","));
+        parameters[3] = param[5].substring(param[5].indexOf("="), param[5].indexOf(","));
+        parameters[4] = param[6].substring(param[6].indexOf("="), param[6].indexOf(","));
+        parameters[5] = param[7].substring(param[7].indexOf("="), param[7].indexOf(" "));
+        return parameters;
+    }
+
+    private String[] getTabletPCParameters(String[] param) {
         String[] parameters = new String[6];
         parameters[0] = param[2].substring(param[2].indexOf("="), param[2].indexOf(","));
         parameters[1] = param[3].substring(param[3].indexOf("="), param[3].indexOf(","));
