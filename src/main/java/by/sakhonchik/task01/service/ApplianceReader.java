@@ -1,5 +1,7 @@
 package by.sakhonchik.task01.service;
 
+import by.sakhonchik.task01.entity.Appliance;
+
 import java.io.*;
 
 public class ApplianceReader {
@@ -10,7 +12,8 @@ public class ApplianceReader {
         File initialFile = new File(pathToFile);
         InputStream targetStream = new FileInputStream(initialFile);
         StringBuilder resultStringBuilder = new StringBuilder();
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(targetStream))) {
+        try (BufferedReader bufferedReader =
+                     new BufferedReader(new InputStreamReader(targetStream))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 if (line.startsWith(nameCriteria)) {
@@ -19,6 +22,12 @@ public class ApplianceReader {
             }
         }
         return resultStringBuilder.toString();
+    }
+
+
+    public Appliance getAppliance() {
+
+        return null;
     }
 
 

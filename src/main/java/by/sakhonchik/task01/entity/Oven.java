@@ -1,7 +1,5 @@
 package by.sakhonchik.task01.entity;
 
-import java.util.Objects;
-
 public class Oven extends Appliance {
     private Integer powerConsumption;
     private Integer weight;
@@ -9,6 +7,8 @@ public class Oven extends Appliance {
     private Integer depth;
     private Double height;
     private Double width;
+
+
 
 
 }
