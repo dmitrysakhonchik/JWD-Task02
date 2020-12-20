@@ -5,7 +5,7 @@ import by.sakhonchik.task01.entity.*;
 
 public class ApplianceFactory {
 
-    public Appliance getBuildAppliance(String[] applianceParameters, String applianceName) {
+    public Appliance getBuiltAppliance(String[] applianceParameters, String applianceName) {
         switch (applianceName) {
             case "Oven":
                 return new Oven.OvenBuilder()
@@ -41,7 +41,7 @@ public class ApplianceFactory {
             case "VacuumCleaner":
                 return new VacuumCleaner();
             default:
-                throw new IllegalArgumentException("Wrong applianceName or applianceParameters");
+                throw new IllegalArgumentException("Wrong appliance name or appliance parameters");
         }
 
     }

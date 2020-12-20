@@ -7,59 +7,62 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ApplianceFileReader {
+
     public static void main(String[] args) throws IOException {
         ApplianceFileReader applianceFileReader = new ApplianceFileReader();
         List<Appliance> applianceList =
-                applianceFileReader.getApplianceListFromFile("appliance-list.txt", "Refrigerator");
+                applianceFileReader.getAppliancesListFromFile("appliance-list.txt", "Refrigerator");
         for (Appliance appliance : applianceList)
             System.out.println(appliance);
     }
 
 
-    public List<Appliance> getApplianceListFromFile(String pathToFile, String nameCriteria) throws IOException {
-        List<Appliance> applianceList = new ArrayList<>();
-        File file = new File(pathToFile);
-        InputStream inputStream = new FileInputStream(file);
+    public List<Appliance> getAppliancesListFromFile(String pathToFile, String nameCriteria) throws IOException {
+        List<Appliance> appliances = new ArrayList<>();
+        File fileWithAppliances = new File(pathToFile);
+        InputStream inputStream = new FileInputStream(fileWithAppliances);
         try (BufferedReader bufferedReader =
                      new BufferedReader(new InputStreamReader(inputStream))) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                if (line.startsWith(nameCriteria)) {
-                    Appliance appliance = getAppliance(line);
-                    applianceList.add(appliance);
+            String lineFromFile;
+            while ((lineFromFile = bufferedReader.readLine()) != null) {
+                if (lineFromFile.startsWith(nameCriteria)) {
+                    Appliance newApplianceFromFile = getAppliance(lineFromFile);
+                    appliances.add(newApplianceFromFile);
                 }
             }
         }
-        return applianceList;
+        return appliances;
     }
 
-    private Appliance getAppliance(String info) {
-        ApplianceFactory applianceFactory = new ApplianceFactory();
+    private Appliance getAppliance(String selectedApplianceFromFile) {
         Appliance appliance;
-        String[] param = info.split(" ");
         String[] parameters;
-        switch (param[0]) {
+        ApplianceFactory applianceFactory = new ApplianceFactory();
+        String[] arrayAppliances = selectedApplianceFromFile.split(" ");
+        String applianceName = arrayAppliances[0];
+
+        switch (applianceName) {
             case "Oven":
-                parameters = getOvenParameters(param);
-                appliance = applianceFactory.getBuildAppliance(parameters, param[0]);
+                parameters = getOvenParameters(arrayAppliances);
+                appliance = applianceFactory.getBuiltAppliance(parameters, applianceName);
                 return appliance;
             case "Laptop":
-                parameters = getLaptopParameters(param);
-                return applianceFactory.getBuildAppliance(parameters, param[0]);
+                parameters = getLaptopParameters(arrayAppliances);
+                return applianceFactory.getBuiltAppliance(parameters, applianceName);
             case "Refrigerator":
-                parameters = getRefrigeratorParameters(param);
-                return applianceFactory.getBuildAppliance(parameters, param[0]);
+                parameters = getRefrigeratorParameters(arrayAppliances);
+                return applianceFactory.getBuiltAppliance(parameters, applianceName);
             case "VacuumCleaner":
-                parameters = getVacuumCleanerParameters(param);
-                return applianceFactory.getBuildAppliance(parameters, param[0]);
+                parameters = getVacuumCleanerParameters(arrayAppliances);
+                return applianceFactory.getBuiltAppliance(parameters, applianceName);
             case "TabletPC":
-                parameters = getTabletPCParameters(param);
-                return applianceFactory.getBuildAppliance(parameters, param[0]);
+                parameters = getTabletPCParameters(arrayAppliances);
+                return applianceFactory.getBuiltAppliance(parameters, applianceName);
             case "Speakers":
-                parameters = getSpeakersParameters(param);
-                return applianceFactory.getBuildAppliance(parameters, param[0]);
+                parameters = getSpeakersParameters(arrayAppliances);
+                return applianceFactory.getBuiltAppliance(parameters, applianceName);
             default:
-                throw new IllegalArgumentException("Wrong info");
+                throw new IllegalArgumentException("Wrong appliance name");
 
         }
 
