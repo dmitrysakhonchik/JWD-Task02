@@ -3,7 +3,7 @@ package by.sakhonchik.task01.service;
 import by.sakhonchik.task01.entity.*;
 
 
-public class ApplianceFactory {
+public class ApplianceBuilder {
 
     public Appliance getBuiltAppliance(String[] applianceParameters, String applianceName) {
         switch (applianceName) {

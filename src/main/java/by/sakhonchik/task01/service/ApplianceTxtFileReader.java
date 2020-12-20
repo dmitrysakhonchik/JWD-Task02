@@ -6,12 +6,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApplianceFileReader {
+public class ApplianceTxtFileReader {
 
     public static void main(String[] args) throws IOException {
-        ApplianceFileReader applianceFileReader = new ApplianceFileReader();
+        ApplianceTxtFileReader applianceTxtFileReader = new ApplianceTxtFileReader();
         List<Appliance> applianceList =
-                applianceFileReader.getAppliancesListFromFile("appliance-list.txt", "Refrigerator");
+                applianceTxtFileReader.getAppliancesListFromFile("appliance-list.txt", "Refrigerator");
         for (Appliance appliance : applianceList)
             System.out.println(appliance);
     }
@@ -37,30 +37,30 @@ public class ApplianceFileReader {
     private Appliance getAppliance(String selectedApplianceFromFile) {
         Appliance appliance;
         String[] parameters;
-        ApplianceFactory applianceFactory = new ApplianceFactory();
+        ApplianceBuilder applianceBuilder = new ApplianceBuilder();
         String[] arrayAppliances = selectedApplianceFromFile.split(" ");
         String applianceName = arrayAppliances[0];
 
         switch (applianceName) {
             case "Oven":
                 parameters = getOvenParameters(arrayAppliances);
-                appliance = applianceFactory.getBuiltAppliance(parameters, applianceName);
+                appliance = applianceBuilder.getBuiltAppliance(parameters, applianceName);
                 return appliance;
             case "Laptop":
                 parameters = getLaptopParameters(arrayAppliances);
-                return applianceFactory.getBuiltAppliance(parameters, applianceName);
+                return applianceBuilder.getBuiltAppliance(parameters, applianceName);
             case "Refrigerator":
                 parameters = getRefrigeratorParameters(arrayAppliances);
-                return applianceFactory.getBuiltAppliance(parameters, applianceName);
+                return applianceBuilder.getBuiltAppliance(parameters, applianceName);
             case "VacuumCleaner":
                 parameters = getVacuumCleanerParameters(arrayAppliances);
-                return applianceFactory.getBuiltAppliance(parameters, applianceName);
+                return applianceBuilder.getBuiltAppliance(parameters, applianceName);
             case "TabletPC":
                 parameters = getTabletPCParameters(arrayAppliances);
-                return applianceFactory.getBuiltAppliance(parameters, applianceName);
+                return applianceBuilder.getBuiltAppliance(parameters, applianceName);
             case "Speakers":
                 parameters = getSpeakersParameters(arrayAppliances);
-                return applianceFactory.getBuiltAppliance(parameters, applianceName);
+                return applianceBuilder.getBuiltAppliance(parameters, applianceName);
             default:
                 throw new IllegalArgumentException("Wrong appliance name");
 
