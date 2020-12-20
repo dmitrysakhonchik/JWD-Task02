@@ -1,7 +1,5 @@
 package by.sakhonchik.task01.entity;
 
-import java.util.Objects;
-
 public class VacuumCleaner extends Appliance{
     private Integer powerConsumption;
     private Integer filterType;

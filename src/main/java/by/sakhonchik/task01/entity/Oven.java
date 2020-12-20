@@ -10,39 +10,39 @@ public class Oven extends Appliance {
     private Double height;
     private Double width;
 
-    public static class Builder {
+    public static class OvenBuilder {
         private Oven newOven;
 
-        public Builder() {
+        public OvenBuilder() {
             newOven = new Oven();
         }
 
-        public Builder withPowerConsumption(Integer powerConsumption) {
+        public OvenBuilder withOvenPowerConsumption(Integer powerConsumption) {
             newOven.powerConsumption = powerConsumption;
             return this;
         }
 
-        public Builder withWeight(Integer weight) {
+        public OvenBuilder withWeight(Integer weight) {
             newOven.weight = weight;
             return this;
         }
 
-        public Builder withCapacity(Integer capacity) {
+        public OvenBuilder withCapacity(Integer capacity) {
             newOven.capacity = capacity;
             return this;
         }
 
-        public Builder withDepth(Integer depth) {
+        public OvenBuilder withDepth(Integer depth) {
             newOven.depth = depth;
             return this;
         }
 
-        public Builder withHeight(Double height) {
+        public OvenBuilder withHeight(Double height) {
             newOven.height = height;
             return this;
         }
 
-        public Builder withWidth(Double width) {
+        public OvenBuilder withWidth(Double width) {
             newOven.width = width;
             return this;
         }
@@ -65,5 +65,17 @@ public class Oven extends Appliance {
     @Override
     public int hashCode() {
         return Objects.hash(powerConsumption, weight, capacity, depth, height, width);
+    }
+
+    @Override
+    public String toString() {
+        return "Oven{" +
+                "powerConsumption=" + powerConsumption +
+                ", weight=" + weight +
+                ", capacity=" + capacity +
+                ", depth=" + depth +
+                ", height=" + height +
+                ", width=" + width +
+                '}';
     }
 }

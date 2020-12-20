@@ -10,7 +10,9 @@ public class ApplianceFileReader {
     public static void main(String[] args) throws IOException {
         ApplianceFileReader applianceFileReader = new ApplianceFileReader();
         List<Appliance> applianceList =
-                applianceFileReader.getApplianceListFromFile("appliance-list.txt", "Oven");
+                applianceFileReader.getApplianceListFromFile("appliance-list.txt", "Refrigerator");
+        for (Appliance appliance : applianceList)
+            System.out.println(appliance);
     }
 
 
@@ -57,7 +59,7 @@ public class ApplianceFileReader {
                 parameters = getSpeakersParameters(param);
                 return applianceFactory.getBuildAppliance(parameters, param[0]);
             default:
-                return null;
+                throw new IllegalArgumentException("Wrong info");
 
         }
 
@@ -76,23 +78,23 @@ public class ApplianceFileReader {
 
     private String[] getLaptopParameters(String[] param) {
         String[] parameters = new String[6];
-        parameters[0] = param[2].substring(param[2].indexOf("="), param[2].indexOf(","));
-        parameters[1] = param[3].substring(param[3].indexOf("="), param[3].indexOf(","));
-        parameters[2] = param[4].substring(param[4].indexOf("="), param[4].indexOf(","));
-        parameters[3] = param[5].substring(param[5].indexOf("="), param[5].indexOf(","));
-        parameters[4] = param[6].substring(param[6].indexOf("="), param[6].indexOf(","));
-        parameters[5] = param[7].substring(param[7].indexOf("="), param[7].indexOf(" "));
+        parameters[0] = param[2].substring(param[2].indexOf("=") + 1, param[2].indexOf(","));
+        parameters[1] = param[3].substring(param[3].indexOf("=") + 1, param[3].indexOf(","));
+        parameters[2] = param[4].substring(param[4].indexOf("=") + 1, param[4].indexOf(","));
+        parameters[3] = param[5].substring(param[5].indexOf("=") + 1, param[5].indexOf(","));
+        parameters[4] = param[6].substring(param[6].indexOf("=") + 1, param[6].indexOf(","));
+        parameters[5] = param[7].substring(param[7].indexOf("=") + 1);
         return parameters;
     }
 
     private String[] getRefrigeratorParameters(String[] param) {
         String[] parameters = new String[6];
-        parameters[0] = param[2].substring(param[2].indexOf("="), param[2].indexOf(","));
-        parameters[1] = param[3].substring(param[3].indexOf("="), param[3].indexOf(","));
-        parameters[2] = param[4].substring(param[4].indexOf("="), param[4].indexOf(","));
-        parameters[3] = param[5].substring(param[5].indexOf("="), param[5].indexOf(","));
-        parameters[4] = param[6].substring(param[6].indexOf("="), param[6].indexOf(","));
-        parameters[5] = param[7].substring(param[7].indexOf("="), param[7].indexOf(" "));
+        parameters[0] = param[2].substring(param[2].indexOf("=") + 1, param[2].indexOf(","));
+        parameters[1] = param[3].substring(param[3].indexOf("=") + 1, param[3].indexOf(","));
+        parameters[2] = param[4].substring(param[4].indexOf("=") + 1, param[4].indexOf(","));
+        parameters[3] = param[5].substring(param[5].indexOf("=") + 1, param[5].indexOf(","));
+        parameters[4] = param[6].substring(param[6].indexOf("=") + 1, param[6].indexOf(","));
+        parameters[5] = param[7].substring(param[7].indexOf("=") + 1);
         return parameters;
     }
 
