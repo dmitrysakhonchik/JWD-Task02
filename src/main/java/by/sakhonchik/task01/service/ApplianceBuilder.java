@@ -2,44 +2,66 @@ package by.sakhonchik.task01.service;
 
 import by.sakhonchik.task01.entity.*;
 
+import java.util.Map;
+
 
 public class ApplianceBuilder {
 
-    public Appliance getBuiltAppliance(String[] applianceParameters, String applianceName) {
-        switch (applianceName) {
+    public Appliance getBuiltAppliance(Map<String, Object> map) {
+        switch ((String) map.get("name")) {
             case "Oven":
                 return new Oven.OvenBuilder()
-                        .withOvenPowerConsumption(Integer.parseInt(applianceParameters[0]))
-                        .withWeight(Integer.parseInt(applianceParameters[1]))
-                        .withCapacity(Integer.parseInt(applianceParameters[2]))
-                        .withDepth(Integer.parseInt(applianceParameters[3]))
-                        .withHeight(Double.parseDouble(applianceParameters[4]))
-                        .withWidth(Double.parseDouble(applianceParameters[5]))
+                        .withOvenPowerConsumption((Integer) map.get("powerConsumption"))
+                        .withWeight((Integer) map.get("weight"))
+                        .withCapacity((Integer) map.get("capacity"))
+                        .withDepth((Integer) map.get("depth"))
+                        .withHeight((Double) map.get("height"))
+                        .withWidth((Double) map.get("width"))
                         .build();
             case "Laptop":
                 return new Laptop.LaptopBuilder()
-                        .withBatteryCapacity(Double.parseDouble(applianceParameters[0]))
-                        .withOs(applianceParameters[1])
-                        .withMemoryRom(Integer.parseInt(applianceParameters[2]))
-                        .withSystemMemory(Integer.parseInt(applianceParameters[3]))
-                        .withCpu(Double.parseDouble(applianceParameters[4]))
-                        .withDisplayInches(Integer.parseInt(applianceParameters[5]))
+                        .withBatteryCapacity((Double) map.get("batteryCapacity"))
+                        .withOs((String) map.get("os"))
+                        .withMemoryRom((Integer) map.get("memoryRom"))
+                        .withSystemMemory((Integer) map.get("systemMemory"))
+                        .withCpu((Double) map.get("cpu"))
+                        .withDisplayInches((Integer) map.get("displayInches"))
                         .build();
             case "Refrigerator":
                 return new Refrigerator.RefrigeratorBuilder()
-                        .withRefrigeratorPowerConsumption(Integer.parseInt(applianceParameters[0]))
-                        .withWeight(Integer.parseInt(applianceParameters[1]))
-                        .withFreezerCapacity(Integer.parseInt(applianceParameters[2]))
-                        .withOverallCapacity(Double.parseDouble(applianceParameters[3]))
-                        .withHeight(Integer.parseInt(applianceParameters[4]))
-                        .withWidth(Integer.parseInt(applianceParameters[5]))
+                        .withRefrigeratorPowerConsumption((Integer) map.get("powerConsumption"))
+                        .withWeight((Integer) map.get("weight"))
+                        .withFreezerCapacity((Integer) map.get("freezerCapacity"))
+                        .withOverallCapacity((Double) map.get("overallCapacity"))
+                        .withHeight((Integer) map.get("height"))
+                        .withWidth((Integer) map.get("width"))
                         .build();
             case "Speakers":
-                return new Speakers();
+                return new Speakers.SpeakersBuilder()
+                        .withPowerConsumption((Integer) map.get("powerConsumption"))
+                        .withNumberOfSpeakers((Integer) map.get("numberOfSpeakers"))
+                        .withFrequencyRange((Integer) map.get("frequencyRange"))
+                        .withCordLength((Integer) map.get("cordLength"))
+                        .build();
             case "TabletPC":
-                return new TabletPC();
+                return new TabletPC.TabletPCBuilder()
+                        .withBatteryCapacity((Integer) map.get("batteryCapacity"))
+                        .withDisplayInches((Integer) map.get("displayInches"))
+                        .withMemoryRom((Integer) map.get("memoryRom"))
+                        .withFlashMemoryCapacity((Integer) map.get("flashMemoryCapacity"))
+                        .withColor((String) map.get("color"))
+                        .build();
             case "VacuumCleaner":
-                return new VacuumCleaner();
+                return new VacuumCleaner.VacuumCleanerBuilder()
+                        .withPowerConsumption((Integer) map.get("powerConsumption"))
+                        .withFilterType((String) map.get("filterType"))
+                        .withBagType((String) map.get("bagType"))
+                        .withWandType((String) map.get("wandType"))
+                        .withMotorSpeedRegulation((Integer) map.get("motorSpeedRegulation"))
+                        .withCleaningWidth((Integer) map.get("cleaningWidth"))
+                        .build();
+
+
             default:
                 throw new IllegalArgumentException("Wrong appliance name or appliance parameters");
         }
