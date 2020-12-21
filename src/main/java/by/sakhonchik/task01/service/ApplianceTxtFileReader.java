@@ -15,16 +15,6 @@ public class ApplianceTxtFileReader {
         this.nameCriteria = nameCriteria;
     }
 
-    public static void main(String[] args) throws IOException {
-        ApplianceTxtFileReader applianceTxtFileReader =
-                new ApplianceTxtFileReader("appliance-list.txt", "VacuumCleaner");
-        List<Appliance> applianceList =
-                applianceTxtFileReader.getAppliancesListFromFile();
-        for (Appliance appliance : applianceList)
-            System.out.println(appliance);
-    }
-
-
     public List<Appliance> getAppliancesListFromFile() throws IOException {
         List<Appliance> appliances = new ArrayList<>();
         File fileWithAppliances = new File(pathToFile);

@@ -69,13 +69,12 @@ public class VacuumCleaner extends Appliance {
 
     @Override
     public String toString() {
-        return "VacuumCleaner{" +
-                "powerConsumption=" + powerConsumption +
-                ", filterType='" + filterType + '\'' +
-                ", bagType='" + bagType + '\'' +
-                ", wandType='" + wandType + '\'' +
-                ", motorSpeedRegulation=" + motorSpeedRegulation +
-                ", cleaningWidth=" + cleaningWidth +
-                '}';
+        return "VacuumCleaner : " +
+                "POWER_CONSUMPTION = " + powerConsumption +
+                ", FILTER_TYPE = '" + filterType + '\'' +
+                ", BAG_TYPE = '" + bagType + '\'' +
+                ", WAND_TYPE = '" + wandType + '\'' +
+                ", MOTOR_SPEED_REGULATION = " + motorSpeedRegulation +
+                ", CLEANING_WIDTH = " + cleaningWidth;
     }
 }

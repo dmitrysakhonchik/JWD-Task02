@@ -63,12 +63,11 @@ public class TabletPC extends Appliance {
 
     @Override
     public String toString() {
-        return "TabletPC{" +
-                "batteryCapacity=" + batteryCapacity +
-                ", displayInches=" + displayInches +
-                ", memoryRom=" + memoryRom +
-                ", flashMemoryCapacity=" + flashMemoryCapacity +
-                ", color='" + color + '\'' +
-                '}';
+        return "TabletPC : " +
+                "BATTERY_CAPACITY = " + batteryCapacity +
+                ", DISPLAY_INCHES = " + displayInches +
+                ", MEMORY_ROM = " + memoryRom +
+                ", FLASH_MEMORY_CAPACITY = " + flashMemoryCapacity +
+                ", COLOR = '" + color;
     }
 }

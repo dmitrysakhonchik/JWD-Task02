@@ -6,10 +6,20 @@ import by.sakhonchik.task01.entity.criteria.Criteria;
 import by.sakhonchik.task01.service.ApplianceTxtFileReader;
 
 import java.io.IOException;
+import java.util.List;
 
 public class ApplianceDAOImpl implements ApplianceDAO {
-    ApplianceTxtFileReader applianceTxtFileReader;
 
+    public static void main(String[] args) throws IOException {
+        ApplianceTxtFileReader applianceTxtFileReader =
+                new ApplianceTxtFileReader("appliance-list.txt", "VacuumCleaner");
+        List<Appliance> applianceList =
+                applianceTxtFileReader.getAppliancesListFromFile();
+
+        for (Appliance appliance : applianceList)
+            System.out.println(appliance);
+
+    }
 
     @Override
     public Appliance find(Criteria criteria) {

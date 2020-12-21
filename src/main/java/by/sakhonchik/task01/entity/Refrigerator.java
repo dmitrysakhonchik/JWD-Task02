@@ -68,13 +68,12 @@ public class Refrigerator extends Appliance {
 
     @Override
     public String toString() {
-        return "Refrigerator{" +
-                "powerConsumption=" + powerConsumption +
-                ", weight=" + weight +
-                ", freezerCapacity=" + freezerCapacity +
-                ", overallCapacity=" + overallCapacity +
-                ", height=" + height +
-                ", width=" + width +
-                '}';
+        return "Refrigerator : " +
+                "POWER_CONSUMPTION = " + powerConsumption +
+                ", WEIGHT = " + weight +
+                ", FREEZER_CAPACITY = " + freezerCapacity +
+                ", OVERALL_CAPACITY = " + overallCapacity +
+                ", HEIGHT = " + height +
+                ", WIDTH = " + width;
     }
 }
