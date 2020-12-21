@@ -13,6 +13,16 @@ public class Laptop extends Appliance {
     public Laptop() {
     }
 
+    public Laptop(Double batteryCapacity, String os, Integer memoryRom,
+                  Integer systemMemory, Double cpu, Integer displayInches) {
+        this.batteryCapacity = batteryCapacity;
+        this.os = os;
+        this.memoryRom = memoryRom;
+        this.systemMemory = systemMemory;
+        this.cpu = cpu;
+        this.displayInches = displayInches;
+    }
+
     @Override
     public Double getBatteryCapacity() {
         return batteryCapacity;
@@ -43,48 +53,34 @@ public class Laptop extends Appliance {
         return displayInches;
     }
 
-    public static class LaptopBuilder {
-        private Laptop newLaptop;
+    @Override
+    public void setBatteryCapacity(Double batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
+    }
 
-        public LaptopBuilder() {
-            newLaptop = new Laptop();
-        }
+    @Override
+    public void setOs(String os) {
+        this.os = os;
+    }
 
-        public LaptopBuilder withBatteryCapacity(Double batteryCapacity) {
-            newLaptop.batteryCapacity = batteryCapacity;
-            return this;
-        }
+    @Override
+    public void setMemoryRom(Integer memoryRom) {
+        this.memoryRom = memoryRom;
+    }
 
-        public LaptopBuilder withOs(String os) {
-            newLaptop.os = os;
-            return this;
-        }
+    @Override
+    public void setSystemMemory(Integer systemMemory) {
+        this.systemMemory = systemMemory;
+    }
 
-        public LaptopBuilder withMemoryRom(Integer memoryRom) {
-            newLaptop.memoryRom = memoryRom;
-            return this;
-        }
+    @Override
+    public void setCpu(Double cpu) {
+        this.cpu = cpu;
+    }
 
-        public LaptopBuilder withSystemMemory(Integer systemMemory) {
-            newLaptop.systemMemory = systemMemory;
-            return this;
-        }
-
-        public LaptopBuilder withCpu(Double cpu) {
-            newLaptop.cpu = cpu;
-            return this;
-        }
-
-        public LaptopBuilder withDisplayInches(Integer displayInches) {
-            newLaptop.displayInches = displayInches;
-            return this;
-        }
-
-
-        public Laptop build() {
-            return newLaptop;
-        }
-
+    @Override
+    public void setDisplayInches(Integer displayInches) {
+        this.displayInches = displayInches;
     }
 
     @Override

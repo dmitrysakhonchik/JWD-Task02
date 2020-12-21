@@ -11,48 +11,26 @@ public class Refrigerator extends Appliance {
     private Integer height;
     private Integer width;
 
-    public static class RefrigeratorBuilder {
-        private Refrigerator newRefrigerator;
-
-        public RefrigeratorBuilder() {
-            newRefrigerator = new Refrigerator();
-        }
-
-        public RefrigeratorBuilder withRefrigeratorPowerConsumption(Integer powerConsumption) {
-            newRefrigerator.powerConsumption = powerConsumption;
-            return this;
-        }
-
-        public RefrigeratorBuilder withWeight(Integer weight) {
-            newRefrigerator.weight = weight;
-            return this;
-        }
-
-        public RefrigeratorBuilder withFreezerCapacity(Integer freezerCapacity) {
-            newRefrigerator.freezerCapacity = freezerCapacity;
-            return this;
-        }
-
-        public RefrigeratorBuilder withOverallCapacity(Double overallCapacity) {
-            newRefrigerator.overallCapacity = overallCapacity;
-            return this;
-        }
-
-        public RefrigeratorBuilder withHeight(Integer height) {
-            newRefrigerator.height = height;
-            return this;
-        }
-
-        public RefrigeratorBuilder withWidth(Integer width) {
-            newRefrigerator.width = width;
-            return this;
-        }
-
-        public Refrigerator build() {
-            return newRefrigerator;
-        }
+    public Refrigerator() {
     }
 
+    public Refrigerator(Integer powerConsumption, Integer weight, Integer freezerCapacity,
+                        Double overallCapacity, Integer height, Integer width) {
+        this.powerConsumption = powerConsumption;
+        this.weight = weight;
+        this.freezerCapacity = freezerCapacity;
+        this.overallCapacity = overallCapacity;
+        this.height = height;
+        this.width = width;
+    }
+
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+
+    public void setWidth(Integer width) {
+        this.width = width;
+    }
 
     @Override
     public boolean equals(Object o) {

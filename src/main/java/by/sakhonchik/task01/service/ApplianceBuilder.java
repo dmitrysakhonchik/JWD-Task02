@@ -19,49 +19,46 @@ public class ApplianceBuilder {
                 oven.setWidth((Double) map.get("width"));
                 return oven;
             case "Laptop":
-                return new Laptop.LaptopBuilder()
-                        .withBatteryCapacity((Double) map.get("batteryCapacity"))
-                        .withOs((String) map.get("os"))
-                        .withMemoryRom((Integer) map.get("memoryRom"))
-                        .withSystemMemory((Integer) map.get("systemMemory"))
-                        .withCpu((Double) map.get("cpu"))
-                        .withDisplayInches((Integer) map.get("displayInches"))
-                        .build();
+                Laptop laptop = new Laptop();
+                laptop.setBatteryCapacity((Double) map.get("batteryCapacity"));
+                laptop.setOs((String) map.get("os"));
+                laptop.setMemoryRom((Integer) map.get("memoryRom"));
+                laptop.setSystemMemory((Integer) map.get("systemMemory"));
+                laptop.setCpu((Double) map.get("cpu"));
+                laptop.setDisplayInches((Integer) map.get("displayInches"));
+                return laptop;
             case "Refrigerator":
-                return new Refrigerator.RefrigeratorBuilder()
-                        .withRefrigeratorPowerConsumption((Integer) map.get("powerConsumption"))
-                        .withWeight((Integer) map.get("weight"))
-                        .withFreezerCapacity((Integer) map.get("freezerCapacity"))
-                        .withOverallCapacity((Double) map.get("overallCapacity"))
-                        .withHeight((Integer) map.get("height"))
-                        .withWidth((Integer) map.get("width"))
-                        .build();
+                Refrigerator refrigerator = new Refrigerator();
+                refrigerator.setPowerConsumption((Integer) map.get("powerConsumption"));
+                refrigerator.setWeight((Integer) map.get("weight"));
+                refrigerator.setFreezerCapacity((Integer) map.get("freezerCapacity"));
+                refrigerator.setOverallCapacity((Double) map.get("overallCapacity"));
+                refrigerator.setHeight((Integer) map.get("height"));
+                refrigerator.setWidth((Integer) map.get("width"));
             case "Speakers":
-                return new Speakers.SpeakersBuilder()
-                        .withPowerConsumption((Integer) map.get("powerConsumption"))
-                        .withNumberOfSpeakers((Integer) map.get("numberOfSpeakers"))
-                        .withFrequencyRange((Integer) map.get("frequencyRange"))
-                        .withCordLength((Integer) map.get("cordLength"))
-                        .build();
+                Speakers speakers = new Speakers();
+                speakers.setPowerConsumption((Integer) map.get("powerConsumption"));
+                speakers.setNumberOfSpeakers((Integer) map.get("numberOfSpeakers"));
+                speakers.setFrequencyRange((Integer) map.get("frequencyRange"));
+                speakers.setCordLength((Integer) map.get("cordLength"));
+                return speakers;
             case "TabletPC":
-                return new TabletPC.TabletPCBuilder()
-                        .withBatteryCapacity((Integer) map.get("batteryCapacity"))
-                        .withDisplayInches((Integer) map.get("displayInches"))
-                        .withMemoryRom((Integer) map.get("memoryRom"))
-                        .withFlashMemoryCapacity((Integer) map.get("flashMemoryCapacity"))
-                        .withColor((String) map.get("color"))
-                        .build();
+                TabletPC tabletPC = new TabletPC();
+                tabletPC.setBatteryCapacity((Integer) map.get("batteryCapacity"));
+                tabletPC.setDisplayInches((Integer) map.get("displayInches"));
+                tabletPC.setMemoryRom((Integer) map.get("memoryRom"));
+                tabletPC.setFlashMemoryCapacity((Integer) map.get("flashMemoryCapacity"));
+                tabletPC.setColor((String) map.get("color"));
+                return tabletPC;
             case "VacuumCleaner":
-                return new VacuumCleaner.VacuumCleanerBuilder()
-                        .withPowerConsumption((Integer) map.get("powerConsumption"))
-                        .withFilterType((String) map.get("filterType"))
-                        .withBagType((String) map.get("bagType"))
-                        .withWandType((String) map.get("wandType"))
-                        .withMotorSpeedRegulation((Integer) map.get("motorSpeedRegulation"))
-                        .withCleaningWidth((Integer) map.get("cleaningWidth"))
-                        .build();
-
-
+                VacuumCleaner vacuumCleaner = new VacuumCleaner();
+                vacuumCleaner.setPowerConsumption((Integer) map.get("powerConsumption"));
+                vacuumCleaner.setFilterType((String) map.get("filterType"));
+                vacuumCleaner.setBagType((String) map.get("bagType"));
+                vacuumCleaner.setWandType((String) map.get("wandType"));
+                vacuumCleaner.setMotorSpeedRegulation((Integer) map.get("motorSpeedRegulation"));
+                vacuumCleaner.setCleaningWidth((Integer) map.get("cleaningWidth"));
+                return vacuumCleaner;
             default:
                 throw new IllegalArgumentException("Wrong appliance name or appliance parameters");
         }

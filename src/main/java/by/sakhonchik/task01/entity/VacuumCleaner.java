@@ -11,48 +11,17 @@ public class VacuumCleaner extends Appliance {
     private Integer motorSpeedRegulation;
     private Integer cleaningWidth;
 
+    public VacuumCleaner() {
+    }
 
-    public static class VacuumCleanerBuilder {
-        private VacuumCleaner newVacuumCleaner;
-
-        public VacuumCleanerBuilder() {
-            newVacuumCleaner = new VacuumCleaner();
-        }
-
-        public VacuumCleanerBuilder withPowerConsumption(Integer powerConsumption) {
-            newVacuumCleaner.powerConsumption = powerConsumption;
-            return this;
-        }
-
-        public VacuumCleanerBuilder withFilterType(String filterType) {
-            newVacuumCleaner.filterType = filterType;
-            return this;
-        }
-
-        public VacuumCleanerBuilder withBagType(String bagType) {
-            newVacuumCleaner.bagType = bagType;
-            return this;
-        }
-
-        public VacuumCleanerBuilder withWandType(String wandType) {
-            newVacuumCleaner.wandType = wandType;
-            return this;
-        }
-
-        public VacuumCleanerBuilder withMotorSpeedRegulation(Integer motorSpeedRegulation) {
-            newVacuumCleaner.motorSpeedRegulation = motorSpeedRegulation;
-            return this;
-        }
-
-        public VacuumCleanerBuilder withCleaningWidth(Integer cleaningWidth) {
-            newVacuumCleaner.cleaningWidth = cleaningWidth;
-            return this;
-        }
-
-        public VacuumCleaner build() {
-            return newVacuumCleaner;
-        }
-
+    public VacuumCleaner(Integer powerConsumption, String filterType, String bagType,
+                         String wandType, Integer motorSpeedRegulation, Integer cleaningWidth) {
+        this.powerConsumption = powerConsumption;
+        this.filterType = filterType;
+        this.bagType = bagType;
+        this.wandType = wandType;
+        this.motorSpeedRegulation = motorSpeedRegulation;
+        this.cleaningWidth = cleaningWidth;
     }
 
     @Override
