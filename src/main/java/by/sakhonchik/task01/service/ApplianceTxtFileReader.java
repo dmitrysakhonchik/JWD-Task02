@@ -15,7 +15,7 @@ public class ApplianceTxtFileReader {
         this.nameCriteria = nameCriteria;
     }
 
-    public List<Appliance> getAppliancesListFromFile() throws IOException {
+    public List<Appliance> getRequiredAppliancesListFromFile() throws IOException {
         List<Appliance> appliances = new ArrayList<>();
         File fileWithAppliances = new File(pathToFile);
         InputStream inputStream = new FileInputStream(fileWithAppliances);
