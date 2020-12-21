@@ -10,6 +10,39 @@ public class Laptop extends Appliance {
     private Double cpu;
     private Integer displayInches;
 
+    public Laptop() {
+    }
+
+    @Override
+    public Double getBatteryCapacity() {
+        return batteryCapacity;
+    }
+
+    @Override
+    public String getOs() {
+        return os;
+    }
+
+    @Override
+    public Integer getMemoryRom() {
+        return memoryRom;
+    }
+
+    @Override
+    public Integer getSystemMemory() {
+        return systemMemory;
+    }
+
+    @Override
+    public Double getCpu() {
+        return cpu;
+    }
+
+    @Override
+    public Integer getDisplayInches() {
+        return displayInches;
+    }
+
     public static class LaptopBuilder {
         private Laptop newLaptop;
 

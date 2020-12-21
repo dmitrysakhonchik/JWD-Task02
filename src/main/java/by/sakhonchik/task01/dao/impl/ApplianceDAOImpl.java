@@ -2,6 +2,7 @@ package by.sakhonchik.task01.dao.impl;
 
 import by.sakhonchik.task01.dao.ApplianceDAO;
 import by.sakhonchik.task01.entity.Appliance;
+import by.sakhonchik.task01.entity.Oven;
 import by.sakhonchik.task01.entity.criteria.Criteria;
 import by.sakhonchik.task01.entity.criteria.SearchCriteria;
 import by.sakhonchik.task01.service.ApplianceTxtFileReader;
@@ -19,17 +20,14 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
 
         ApplianceTxtFileReader applianceTxtFileReader =
-                new ApplianceTxtFileReader("appliance-list.txt", criteriaOven.getGroupSearchName());
+                new ApplianceTxtFileReader("appliance-list.txt", "Laptop");
         List<Appliance> applianceList =
                 applianceTxtFileReader.getRequiredAppliancesListFromFile();
-        for (Appliance appliance : applianceList){
+        for (Appliance appliance : applianceList) {
 
-            System.out.println(appliance);
+            System.out.println(appliance.getOs());
 
         }
-
-
-
 
 
     }

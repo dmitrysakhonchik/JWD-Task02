@@ -10,14 +10,14 @@ public class ApplianceBuilder {
     public Appliance getBuiltAppliance(Map<String, Object> map) {
         switch ((String) map.get("name")) {
             case "Oven":
-                return new Oven.OvenBuilder()
-                        .withOvenPowerConsumption((Integer) map.get("powerConsumption"))
-                        .withWeight((Integer) map.get("weight"))
-                        .withCapacity((Integer) map.get("capacity"))
-                        .withDepth((Integer) map.get("depth"))
-                        .withHeight((Double) map.get("height"))
-                        .withWidth((Double) map.get("width"))
-                        .build();
+                Oven oven = new Oven();
+                oven.setPowerConsumption((Integer) map.get("powerConsumption"));
+                oven.setWeight((Integer) map.get("weight"));
+                oven.setCapacity((Integer) map.get("capacity"));
+                oven.setDepth((Integer) map.get("depth"));
+                oven.setHeight((Double) map.get("height"));
+                oven.setWidth((Double) map.get("width"));
+                return oven;
             case "Laptop":
                 return new Laptop.LaptopBuilder()
                         .withBatteryCapacity((Double) map.get("batteryCapacity"))
