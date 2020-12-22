@@ -1,4 +1,4 @@
-package by.sakhonchik.task01.service;
+package by.sakhonchik.task01.service.builder;
 
 import by.sakhonchik.task01.entity.*;
 

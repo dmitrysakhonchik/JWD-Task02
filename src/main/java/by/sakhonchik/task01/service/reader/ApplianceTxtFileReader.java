@@ -1,7 +1,9 @@
-package by.sakhonchik.task01.service;
+package by.sakhonchik.task01.service.reader;
 
 import by.sakhonchik.task01.entity.Appliance;
 import by.sakhonchik.task01.entity.criteria.Criteria;
+import by.sakhonchik.task01.service.builder.ApplianceBuilder;
+import by.sakhonchik.task01.service.parser.ApplianceParser;
 
 import java.io.*;
 import java.util.*;

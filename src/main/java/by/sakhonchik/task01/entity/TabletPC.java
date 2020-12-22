@@ -69,6 +69,6 @@ public class TabletPC extends Appliance {
                 ", DISPLAY_INCHES = " + displayInches +
                 ", MEMORY_ROM = " + memoryRom +
                 ", FLASH_MEMORY_CAPACITY = " + flashMemoryCapacity +
-                ", COLOR = '" + color;
+                ", COLOR = " + color;
     }
 }

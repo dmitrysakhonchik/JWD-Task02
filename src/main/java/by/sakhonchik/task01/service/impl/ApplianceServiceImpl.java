@@ -8,24 +8,23 @@ import by.sakhonchik.task01.entity.criteria.Criteria;
 import by.sakhonchik.task01.service.ApplianceService;
 
 import java.io.IOException;
+import java.util.List;
 
-public class ApplianceServiceImpl implements ApplianceService{
+public class ApplianceServiceImpl implements ApplianceService {
 
-	@Override
-	public Appliance find(Criteria criteria) throws IOException {
-		if (!Validator.criteriaValidator(criteria)) {
-			return null;
-		}
-		
-		DAOFactory factory = DAOFactory.getInstance();
-		ApplianceDAO applianceDAO = factory.getApplianceDAO();
-		
-		Appliance appliance = applianceDAO.find(criteria);
-		
-		// you may add your own code here
-		
-		return appliance;
-	}
+    @Override
+    public List<Appliance> find(Criteria criteria) throws IOException {
+        if (!Validator.criteriaValidator(criteria)) {
+            return null;
+        }
+
+        DAOFactory factory = DAOFactory.getInstance();
+        ApplianceDAO applianceDAO = factory.getApplianceDAO();
+
+        // you may add your own code here
+
+        return applianceDAO.find(criteria);
+    }
 
 }
 

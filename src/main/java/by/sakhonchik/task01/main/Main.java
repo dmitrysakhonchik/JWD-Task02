@@ -7,12 +7,13 @@ import by.sakhonchik.task01.service.ApplianceService;
 import by.sakhonchik.task01.service.ServiceFactory;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Appliance appliance;
+        List<Appliance> appliance;
 
         ServiceFactory factory = ServiceFactory.getInstance();
         ApplianceService service = factory.getApplianceService();

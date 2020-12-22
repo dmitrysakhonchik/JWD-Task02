@@ -1,6 +1,7 @@
-package by.sakhonchik.task01.service;
+package by.sakhonchik.task01.service.parser;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class ApplianceParser {
@@ -101,7 +102,7 @@ public class ApplianceParser {
                         param[4].substring(param[4].indexOf("=") + 1, param[4].indexOf(","))));
                 parameters.put("flashMemoryCapacity", Integer.parseInt(
                         param[5].substring(param[5].indexOf("=") + 1, param[5].indexOf(","))));
-                parameters.put("color", param[6].substring(param[6].indexOf("=") + 1));
+                parameters.put("color", param[6].substring(param[6].indexOf("=") + 1).toUpperCase(Locale.ROOT));
                 return parameters;
 
             default:
