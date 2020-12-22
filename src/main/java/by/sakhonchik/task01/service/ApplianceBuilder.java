@@ -27,21 +27,22 @@ public class ApplianceBuilder {
                         .withCpu((Double) map.get("cpu"))
                         .withDisplayInches((Integer) map.get("displayInches"))
                         .build();
-//            case "Refrigerator":
-//                Refrigerator refrigerator = new Refrigerator();
-//                refrigerator.setPowerConsumption((Integer) map.get("powerConsumption"));
-//                refrigerator.setWeight((Integer) map.get("weight"));
-//                refrigerator.setFreezerCapacity((Integer) map.get("freezerCapacity"));
-//                refrigerator.setOverallCapacity((Double) map.get("overallCapacity"));
-//                refrigerator.setHeight((Integer) map.get("height"));
-//                refrigerator.setWidth((Integer) map.get("width"));
-//            case "Speakers":
-//                Speakers speakers = new Speakers();
-//                speakers.setPowerConsumption((Integer) map.get("powerConsumption"));
-//                speakers.setNumberOfSpeakers((Integer) map.get("numberOfSpeakers"));
-//                speakers.setFrequencyRange((Integer) map.get("frequencyRange"));
-//                speakers.setCordLength((Integer) map.get("cordLength"));
-//                return speakers;
+            case "Refrigerator":
+                return new Refrigerator.RefrigeratorBuilder()
+                        .withPowerConsumption((Integer) map.get("powerConsumption"))
+                        .withWeight((Integer) map.get("weight"))
+                        .withFreezerCapacity((Integer) map.get("freezerCapacity"))
+                        .withOverallCapacity((Double) map.get("overallCapacity"))
+                        .withHeight((Integer) map.get("height"))
+                        .withWidth((Integer) map.get("width"))
+                        .build();
+            case "Speakers":
+                return new Speakers.SpeakersBuilder()
+                        .withPowerConsumption((Integer) map.get("powerConsumption"))
+                        .withNumberOfSpeakers((Integer) map.get("numberOfSpeakers"))
+                        .withFrequencyRange((Integer) map.get("frequencyRange"))
+                        .withCordLength((Integer) map.get("cordLength"))
+                        .build();
             case "TabletPC":
                 return new TabletPC.TabletPCBuilder()
                         .withBatteryCapacity((Integer) map.get("batteryCapacity"))
@@ -50,15 +51,15 @@ public class ApplianceBuilder {
                         .withFlashMemoryCapacity((Integer) map.get("flashMemoryCapacity"))
                         .withColor((String) map.get("color"))
                         .build();
-//            case "VacuumCleaner":
-//                VacuumCleaner vacuumCleaner = new VacuumCleaner();
-//                vacuumCleaner.setPowerConsumption((Integer) map.get("powerConsumption"));
-//                vacuumCleaner.setFilterType((String) map.get("filterType"));
-//                vacuumCleaner.setBagType((String) map.get("bagType"));
-//                vacuumCleaner.setWandType((String) map.get("wandType"));
-//                vacuumCleaner.setMotorSpeedRegulation((Integer) map.get("motorSpeedRegulation"));
-//                vacuumCleaner.setCleaningWidth((Integer) map.get("cleaningWidth"));
-//                return vacuumCleaner;
+            case "VacuumCleaner":
+                return new VacuumCleaner.VacuumCleanerBuilder()
+                        .withPowerConsumption((Integer) map.get("powerConsumption"))
+                        .withFilterType((String) map.get("filterType"))
+                        .withBagType((String) map.get("bagType"))
+                        .withWandType((String) map.get("wandType"))
+                        .withMotorSpeedRegulation((Integer) map.get("motorSpeedRegulation"))
+                        .withCleaningWidth((Integer) map.get("cleaningWidth"))
+                        .build();
             default:
                 throw new IllegalArgumentException("Wrong appliance name or appliance parameters");
         }
