@@ -11,18 +11,6 @@ public class VacuumCleaner extends Appliance {
     private Integer motorSpeedRegulation;
     private Integer cleaningWidth;
 
-    public VacuumCleaner() {
-    }
-
-    public VacuumCleaner(Integer powerConsumption, String filterType, String bagType,
-                         String wandType, Integer motorSpeedRegulation, Integer cleaningWidth) {
-        this.powerConsumption = powerConsumption;
-        this.filterType = filterType;
-        this.bagType = bagType;
-        this.wandType = wandType;
-        this.motorSpeedRegulation = motorSpeedRegulation;
-        this.cleaningWidth = cleaningWidth;
-    }
 
     @Override
     public boolean equals(Object o) {

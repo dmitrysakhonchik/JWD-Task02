@@ -14,9 +14,9 @@ public class ApplianceDAOImpl implements ApplianceDAO {
     public static void main(String[] args) throws IOException {
 
         Criteria criteriaOven = new Criteria(SearchCriteria.Oven.class.getSimpleName());//"Oven"
-        criteriaOven.add(SearchCriteria.Oven.HEIGHT.toString(), 45);
-        criteriaOven.add(SearchCriteria.Oven.DEPTH.toString(), 300);
         criteriaOven.add(SearchCriteria.Oven.CAPACITY.toString(), 3);
+        criteriaOven.add(SearchCriteria.Oven.HEIGHT.toString(), 200);
+        criteriaOven.add(SearchCriteria.Oven.DEPTH.toString(), 300);
 
 
         ApplianceTxtFileReader applianceTxtFileReader =

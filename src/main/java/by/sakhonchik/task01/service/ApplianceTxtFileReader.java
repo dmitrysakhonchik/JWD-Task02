@@ -39,7 +39,7 @@ public class ApplianceTxtFileReader {
         ApplianceParser applianceParser = new ApplianceParser();
         String[] parametersApplianceArray = lineWithParameters.split(" ");
         Map<String, Object> criteriaMap = criteria.getCriteria();
-        Map<String, Object> mapWithParameters = applianceParser.getOvenParameters(parametersApplianceArray);
+        Map<String, Object> mapWithParameters = applianceParser.getParameters(parametersApplianceArray);
 
         for (Map.Entry<String, Object> mapFromCriteria : criteriaMap.entrySet()) {
             for (Map.Entry<String, Object> mapFromLine : mapWithParameters.entrySet()) {
@@ -54,35 +54,11 @@ public class ApplianceTxtFileReader {
 
 
     private Appliance getAppliance(String selectedApplianceFromFile) {
-        Appliance appliance;
-        Map<String, Object> mapWithParameters;
         ApplianceParser applianceParser = new ApplianceParser();
         ApplianceBuilder applianceBuilder = new ApplianceBuilder();
         String[] arrayAppliances = selectedApplianceFromFile.split(" ");
-        switch (criteria.getGroupSearchName()) {
-            case "Oven":
-                mapWithParameters = applianceParser.getOvenParameters(arrayAppliances);
-                appliance = applianceBuilder.getBuiltAppliance(mapWithParameters);
-                return appliance;
-            case "Laptop":
-                mapWithParameters = applianceParser.getLaptopParameters(arrayAppliances);
-                return applianceBuilder.getBuiltAppliance(mapWithParameters);
-            case "Refrigerator":
-                mapWithParameters = applianceParser.getRefrigeratorParameters(arrayAppliances);
-                return applianceBuilder.getBuiltAppliance(mapWithParameters);
-            case "VacuumCleaner":
-                mapWithParameters = applianceParser.getVacuumCleanerParameters(arrayAppliances);
-                return applianceBuilder.getBuiltAppliance(mapWithParameters);
-            case "TabletPC":
-                mapWithParameters = applianceParser.getTabletPCParameters(arrayAppliances);
-                return applianceBuilder.getBuiltAppliance(mapWithParameters);
-            case "Speakers":
-                mapWithParameters = applianceParser.getSpeakersParameters(arrayAppliances);
-                return applianceBuilder.getBuiltAppliance(mapWithParameters);
-            default:
-                throw new IllegalArgumentException("Wrong appliance name");
-
-        }
+        Map<String, Object> mapWithParameters = applianceParser.getParameters(arrayAppliances);
+        return applianceBuilder.getBuiltAppliance(mapWithParameters);
 
     }
 

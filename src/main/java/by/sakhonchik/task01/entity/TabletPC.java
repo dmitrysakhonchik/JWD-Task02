@@ -10,20 +10,43 @@ public class TabletPC extends Appliance {
     private Integer flashMemoryCapacity;
     private String color;
 
-    public TabletPC() {
-    }
+    public static class TabletPCBuilder {
+        private TabletPC newTabletPC;
 
-    public TabletPC(Integer batteryCapacity, Integer displayInches, Integer memoryRom,
-                    Integer flashMemoryCapacity, String color) {
-        this.batteryCapacity = batteryCapacity;
-        this.displayInches = displayInches;
-        this.memoryRom = memoryRom;
-        this.flashMemoryCapacity = flashMemoryCapacity;
-        this.color = color;
-    }
+        public TabletPCBuilder() {
+            newTabletPC = new TabletPC();
+        }
 
-    public void setBatteryCapacity(Integer batteryCapacity) {
-        this.batteryCapacity = batteryCapacity;
+        public TabletPCBuilder withBatteryCapacity(Integer batteryCapacity) {
+            newTabletPC.batteryCapacity = batteryCapacity;
+            return this;
+        }
+
+        public TabletPCBuilder withDisplayInches(Integer displayInches) {
+            newTabletPC.displayInches = displayInches;
+            return this;
+        }
+
+        public TabletPCBuilder withMemoryRom(Integer memoryRom) {
+            newTabletPC.memoryRom = memoryRom;
+            return this;
+        }
+
+        public TabletPCBuilder withFlashMemoryCapacity(Integer flashMemoryCapacity) {
+            newTabletPC.flashMemoryCapacity = flashMemoryCapacity;
+            return this;
+        }
+
+        public TabletPCBuilder withColor(String color) {
+            newTabletPC.color = color;
+            return this;
+        }
+
+
+        public TabletPC build() {
+            return newTabletPC;
+        }
+
     }
 
     @Override

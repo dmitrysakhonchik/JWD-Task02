@@ -9,16 +9,7 @@ public class Speakers extends Appliance {
     private Integer frequencyRange;
     private Integer cordLength;
 
-    public Speakers() {
-    }
 
-    public Speakers(Integer powerConsumption, Integer numberOfSpeakers,
-                    Integer frequencyRange, Integer cordLength) {
-        this.powerConsumption = powerConsumption;
-        this.numberOfSpeakers = numberOfSpeakers;
-        this.frequencyRange = frequencyRange;
-        this.cordLength = cordLength;
-    }
 
     @Override
     public boolean equals(Object o) {

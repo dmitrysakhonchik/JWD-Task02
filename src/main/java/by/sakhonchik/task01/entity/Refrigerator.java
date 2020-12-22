@@ -11,26 +11,7 @@ public class Refrigerator extends Appliance {
     private Integer height;
     private Integer width;
 
-    public Refrigerator() {
-    }
 
-    public Refrigerator(Integer powerConsumption, Integer weight, Integer freezerCapacity,
-                        Double overallCapacity, Integer height, Integer width) {
-        this.powerConsumption = powerConsumption;
-        this.weight = weight;
-        this.freezerCapacity = freezerCapacity;
-        this.overallCapacity = overallCapacity;
-        this.height = height;
-        this.width = width;
-    }
-
-    public void setHeight(Integer height) {
-        this.height = height;
-    }
-
-    public void setWidth(Integer width) {
-        this.width = width;
-    }
 
     @Override
     public boolean equals(Object o) {

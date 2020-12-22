@@ -11,76 +11,47 @@ public class Oven extends Appliance {
     private Double height;
     private Double width;
 
-    public Oven() {
-    }
+    public static class OvenBuilder {
+        private Oven newOven;
 
-    @Override
-    public Integer getPowerConsumption() {
-        return powerConsumption;
-    }
+        public OvenBuilder() {
+            newOven = new Oven();
+        }
 
-    @Override
-    public void setPowerConsumption(Integer powerConsumption) {
-        this.powerConsumption = powerConsumption;
-    }
+        public OvenBuilder withPowerConsumption(Integer powerConsumption) {
+            newOven.powerConsumption = powerConsumption;
+            return this;
+        }
 
-    @Override
-    public Integer getWeight() {
-        return weight;
-    }
+        public OvenBuilder withWeight(Integer weight) {
+            newOven.weight = weight;
+            return this;
+        }
 
-    @Override
-    public void setWeight(Integer weight) {
-        this.weight = weight;
-    }
+        public OvenBuilder withCapacity(Integer capacity) {
+            newOven.capacity = capacity;
+            return this;
+        }
 
-    @Override
-    public Integer getCapacity() {
-        return capacity;
-    }
+        public OvenBuilder withDepth(Integer depth) {
+            newOven.depth = depth;
+            return this;
+        }
 
-    @Override
-    public void setCapacity(Integer capacity) {
-        this.capacity = capacity;
-    }
+        public OvenBuilder withHeight(Double height) {
+            newOven.height = height;
+            return this;
+        }
 
-    @Override
-    public Integer getDepth() {
-        return depth;
-    }
+        public OvenBuilder withWidth(Double width) {
+            newOven.width = width;
+            return this;
+        }
 
-    @Override
-    public void setDepth(Integer depth) {
-        this.depth = depth;
-    }
+        public Oven build() {
+            return newOven;
+        }
 
-    @Override
-    public Double getHeight() {
-        return height;
-    }
-
-    @Override
-    public void setHeight(Double height) {
-        this.height = height;
-    }
-
-    @Override
-    public Double getWidth() {
-        return width;
-    }
-
-    @Override
-    public void setWidth(Double width) {
-        this.width = width;
-    }
-
-    public Oven(Integer powerConsumption, Integer weight, Integer capacity, Integer depth, Double height, Double width) {
-        this.powerConsumption = powerConsumption;
-        this.weight = weight;
-        this.capacity = capacity;
-        this.depth = depth;
-        this.height = height;
-        this.width = width;
     }
 
 
